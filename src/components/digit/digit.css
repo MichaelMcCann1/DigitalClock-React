@@ -1,0 +1,63 @@
+.digit {
+  height: var(--digitHeight);
+  aspect-ratio: 1/2;
+  margin: 0 .5em;
+  position: relative;
+}
+
+.digit > div {
+  background: var(--gray);
+  border-radius: 1000px;
+}
+
+.top {
+  margin: 0 auto;
+  width: 85%;
+  height: var(--lineWidth);
+}
+.topRight {
+  width: var(--lineWidth);
+  height: var(--lineLength);
+  position: absolute;
+  right: 0;
+}
+.topLeft {
+  width: var(--lineWidth);
+  height: var(--lineLength);
+  position: absolute;
+  left: 0;
+}
+.middle {
+  width: 85%;
+  height: var(--lineWidth);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottomRight {
+  width: var(--lineWidth);
+  height: var(--lineLength);
+  position: absolute;
+  right: 0;
+  bottom: var(--lineWidth);
+}
+.bottomLeft {
+  width: var(--lineWidth);
+  height: var(--lineLength);
+  position: absolute;
+  left: 0;
+  bottom: var(--lineWidth);
+}
+.bottom {
+  width: 85%;
+  height: var(--lineWidth);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.digit > .active {
+  background: var(--red);
+}

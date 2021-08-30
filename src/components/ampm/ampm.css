@@ -1,0 +1,31 @@
+.ampm {
+  color: var(--gray);
+  height: var(--digitHeight);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: .5em;
+  font-size: 4em;
+}
+
+.ampm > .active {
+  color: var(--red)
+}
+
+@media screen and (max-width: 1000px ) {
+  .ampm {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 770px ) {
+  .ampm {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 600px ) {
+  .ampm {
+    font-size: 1.25em;
+  }
+}

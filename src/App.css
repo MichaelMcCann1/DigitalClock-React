@@ -1,0 +1,90 @@
+.colon {
+  display: flex;
+  flex-direction: column;
+  height: var(--digitHeight);
+  justify-content: space-around;
+  margin: 0 1em;
+}
+
+.dot {
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--red);
+  border-radius: 3px;
+}
+
+.time {
+  display: flex;
+}
+
+@media screen and (max-width: 1000px ) {
+  :root {
+    --lineWidth: 7.5px;
+    --digitHeight: 150px;
+  }
+
+  .dot {
+    width: .75em;
+    height: .75em;
+    border-radius: 1px;
+  }
+
+  .ampm {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 770px ) {
+  :root {
+    --lineWidth: 5px;
+    --digitHeight: 100px;
+  }
+
+  * {
+    font-weight: 500;
+  }
+
+  .dot {
+    width: .5em;
+    height: .5em;
+    border-radius: 1px;
+  }
+
+  .ampm {
+    margin-left: .5em;
+    font-size: 1em;
+  }
+
+  .date {
+    font-size: 1em;
+  }
+
+  .digit {
+    margin: 0 .25em;
+  }
+
+  .colon {
+    margin: 0 .5em;
+  }
+}
+
+@media screen and (max-width: 600px ) {
+  :root {
+    --lineWidth: 2.5px;
+    --digitHeight: 50px;
+  }
+
+  .dot {
+    width: .5em;
+    height: .5em;
+    border-radius: 1px;
+  }
+
+  .ampm {
+    font-size: .75em;
+  }
+
+  .date {
+    font-size: .75em;
+  }
+}

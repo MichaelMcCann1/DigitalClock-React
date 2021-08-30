@@ -1,0 +1,26 @@
+.date {
+  color: var(--red);
+  display: flex;
+  justify-content: space-between;
+  font-size: 4em;
+  margin: 0 .5em 1em .5em;
+}
+
+
+@media screen and (max-width: 1000px ) {
+  .date {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 770px ) {
+  .date {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 600px ) {
+  .date {
+    font-size: 1.5em;
+  }
+}
