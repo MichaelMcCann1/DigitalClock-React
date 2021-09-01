@@ -7,7 +7,7 @@ import DateInfo from './components/date/Date';
 function App() {
 
   const [time, setTime] = useState({})
-  const [wordArray, setWordArray] = useState([])
+  const [timeArray, setTimeArray] = useState([])
 
   useEffect(() => {
     const clockInterval = setInterval(() => {
@@ -40,22 +40,31 @@ function App() {
   useEffect(() => {
     let data = time
     if (Object.keys(data).length !== 0) {
-      if (data.hours <= 9) data.hours = `0${data.hours}`
-      if (data.minutes <= 9) data.minutes = `0${data.minutes}`
-      if (data.seconds <= 9) data.seconds = `0${data.seconds}`
-  
-      data.hours = data.hours.toString()
-      data.minutes = data.minutes.toString()
-      data.seconds = data.seconds.toString()
-  
-      let numberString = (data.hours + data.minutes + data.seconds)
-      let workingWordArray = []
-      let numbers = ['zero','one','two','three','four','five','six','seven','eight','nine'];
-  
-      for (let i=0; i<numberString.length; i++){
-        workingWordArray.push(numbers[numberString[i]])
+      let workingTimeArray = []
+      if (data.hours <= 9) {
+        workingTimeArray.push(0)
+        workingTimeArray.push(data.hours)
+      } else {
+        workingTimeArray.push(Math.floor(data.hours/10))
+        workingTimeArray.push(data.hours%10)
       }
-      setWordArray(workingWordArray)
+      
+      if (data.minutes <= 9) {
+        workingTimeArray.push(0)
+        workingTimeArray.push(data.minutes)
+      } else {
+        workingTimeArray.push(Math.floor(data.minutes/10))
+        workingTimeArray.push(data.minutes%10)
+      }
+
+      if (data.seconds <= 9) {
+        workingTimeArray.push(0)
+        workingTimeArray.push(data.seconds)
+      } else {
+        workingTimeArray.push(Math.floor(data.seconds/10))
+        workingTimeArray.push(data.seconds%10)
+      }
+      setTimeArray(workingTimeArray)
     }
   }, [time])
 
@@ -64,20 +73,20 @@ function App() {
     <div className="clock">
       <DateInfo month={time.month} day={time.date} year={time.year}/>
       <div className="time">
-        <Digit number={wordArray[0]}/>
-        <Digit number={wordArray[1]}/>
+        <Digit number={timeArray[0]}/>
+        <Digit number={timeArray[1]}/>
         <div className="colon">
           <div className="dot"></div>
           <div className="dot"></div>
         </div>
-        <Digit number={wordArray[2]}/>
-        <Digit number={wordArray[3]}/>
+        <Digit number={timeArray[2]}/>
+        <Digit number={timeArray[3]}/>
         <div className="colon">
           <div className="dot"></div>
           <div className="dot"></div>
         </div>
-        <Digit number={wordArray[4]}/>
-        <Digit number={wordArray[5]}/>
+        <Digit number={timeArray[4]}/>
+        <Digit number={timeArray[5]}/>
         <Ampm ampm={time.ampm}/>
       </div>
     </div>
