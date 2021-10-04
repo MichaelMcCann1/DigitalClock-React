@@ -1,5 +1,7 @@
 # DigitClock-React
 
+**Live Link to Project: https://mm-digitalclock-react.web.app/**
+
 I created a digital clock using ReactJS. This project is the same as the digital clock I made [here with vanilla JavaScript](https://github.com/MichaelMcCann1/DigitalClock). The functionality between the two are the same except this one is made with React. Please refer to the other repository for a more in-depth explanation on how the code works. 
 
 
