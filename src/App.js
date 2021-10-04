@@ -6,6 +6,9 @@ import DateInfo from './components/date/Date';
 
 function App() {
 
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
   const [time, setTime] = useState({})
   const [timeArray, setTimeArray] = useState([])
 
@@ -71,6 +74,7 @@ function App() {
 
   return (
     <div className="clock">
+      <a className="githubLink" href="https://github.com/MichaelMcCann1/DigitalClock-React"><img src="Images/GitHub.svg"></img></a>
       <DateInfo month={time.month} day={time.date} year={time.year}/>
       <div className="time">
         <Digit number={timeArray[0]}/>

@@ -1,6 +1,6 @@
 .digit {
   height: var(--digitHeight);
-  aspect-ratio: 1/2;
+  width: calc(.5 * var(--digitHeight));
   margin: 0 .5em;
   position: relative;
 }
@@ -60,4 +60,11 @@
 
 .digit > .active {
   background: var(--red);
+}
+
+
+@media screen and (max-width: 770px ) {
+  .digit {
+    margin: 0 .25em;
+  }
 }
